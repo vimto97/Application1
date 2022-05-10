@@ -12,8 +12,11 @@ namespace Application1.Pages
             _logger = logger;
         }
 
+        public string Status { get; private set; }
+
         public void OnGet()
         {
+            Status = "Hello World!";
 
         }
     }
