@@ -13,10 +13,16 @@ namespace Application1.Pages
         }
 
         public string Status { get; private set; }
-
+        [BindProperty(SupportsGet = true)]
+        public string Name { get; set; }
         public void OnGet()
         {
             Status = "Hello World!";
+
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                Name = "Random User";
+            }
 
         }
     }
