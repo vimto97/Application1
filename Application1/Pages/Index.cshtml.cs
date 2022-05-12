@@ -15,6 +15,8 @@ namespace Application1.Pages
         public string Status { get; private set; }
         [BindProperty(SupportsGet = true)]
         public string Name { get; set; }
+        [BindProperty]
+        public string City { get; set; }
         public void OnGet()
         {
             Status = "Hello World!";
@@ -23,7 +25,10 @@ namespace Application1.Pages
             {
                 Name = "Random User";
             }
-
+            if (string.IsNullOrWhiteSpace(City))
+            {
+                City = "in the United Kingdom";
+            }
         }
     }
 }

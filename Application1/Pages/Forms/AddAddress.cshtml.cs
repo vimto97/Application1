@@ -14,10 +14,11 @@ namespace Application1.Pages.Forms
         }
         public IActionResult OnPost()
         {
-            if(ModelState.IsValid == false){
+            if(ModelState.IsValid == false)
+            {
                 return Page();
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Index", new { Address.City});
         }
     }
 }

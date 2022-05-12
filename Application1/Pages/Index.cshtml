@@ -7,10 +7,25 @@
 <div class="text-center">
     <h1 class="display-4">@Model.Status</h1>
     <h2>Welcome @Model.Name</h2>
+    <h2>You are @Model.City</h2>
 </div>
 <div class="left-center">
     <h2>The application!</h2>
+    <div style="margin-top:30px;">
+    <form method="post">
+        <div>Name: <input asp-for="Name" /></div>
+        <div>Where you based: <input asp-for="City" /></div>
+        <div><input type="submit" /></div>
+    </form>
+    @if (!string.IsNullOrEmpty(Model.Name))
+    {
+        <p>Hello @Model.Name!</p>
+    }
+    @if (!string.IsNullOrEmpty(Model.City))
+    {
+        <p>Hello @Model.City!</p>
+    }
+</div>
     <h3>Click below to start the form.</h3>
-
-    
+    <a class="nav-link text-dark" asp-area="" asp-page="/Forms/AddAddress">Form to Apply</a>
 </div>
