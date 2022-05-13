@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Application1.Models;
 
 namespace Application1.Pages
 {
@@ -20,7 +21,7 @@ namespace Application1.Pages
         public void OnGet()
         {
             Status = "Hello World!";
-
+            AddressModel.ReferenceEquals(City, Name);
             if (string.IsNullOrWhiteSpace(Name))
             {
                 Name = "Random User";
@@ -30,5 +31,11 @@ namespace Application1.Pages
                 City = "in the United Kingdom";
             }
         }
+        public IActionResult OnPost()
+        {
+
+            return RedirectToPage("/Forms/AddAddress");
+        }
+        
     }
 }
