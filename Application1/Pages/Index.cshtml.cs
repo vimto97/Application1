@@ -31,11 +31,11 @@ namespace Application1.Pages
                 City = "in the United Kingdom";
             }
         }
-        public IActionResult OnPost()
-        {
+        //public IActionResult OnPost()
+        //{
 
-            return RedirectToPage("/Forms/AddAddress");
-        }
+        //    return RedirectToPage("/Forms/AddAddress");
+        //}
         
     }
 }
