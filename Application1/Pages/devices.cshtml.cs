@@ -1,14 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using Application1.Models;
+
 namespace Application1.Pages
 {
-    public class devicesModel : PageModel
+    public class IndexModel1 : PageModel
     {
-        public List<string> Devices = new List<string>();
+        private IndexModel1 Context { get; }
+        public IndexModel1(IndexModel1 _context)
+        {
+            this.Context = _context;
+        }
+
+        public List<Devices> Devices { get; set; }
+
+
         public void OnGet()
         {
-            Devices.AddRange(new[] { "Laptop", "Phone", "Desktop", "Dog" });
+            this.Devices = (from devices in this.Context.Devices.Take(10)
+                              select devices).ToList();
         }
 
         public string Message { get; set; } = "Initial Request";

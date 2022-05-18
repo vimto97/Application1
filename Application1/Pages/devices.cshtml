@@ -1,5 +1,6 @@
 ﻿@page
-@model Application1.Pages.devicesModel
+@model Application1.Pages.IndexModel1
+@using Application1.Models
 @{
 }
 <div class="row">
@@ -20,3 +21,34 @@
     </div>
 </div>
 <h3 class="clearfix">@Model.Message</h3>
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Index</title>
+</head>
+<body>
+    <h4>Devices</h4>
+    <hr/>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>DeviceID</th>
+            <th>SerialNumber</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+        @foreach (Devices device in Model.Devices)
+        {
+            <tr>
+                <td>@device.DeviceID</td>
+                <td>@device.SerialNumber</td>
+                <td>@device.Make</td>
+                <td>@device.Model</td>
+                <td>@device.Year</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
