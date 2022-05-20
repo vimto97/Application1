@@ -7,10 +7,10 @@ namespace Application1.Pages
 {
     public class IndexModel1 : PageModel
     {
-        private IndexModel1 Context { get; }
-        public IndexModel1(IndexModel1 _context)
+        private DBCtx Context { get; }
+        public IndexModel1(DBCtx _context1)
         {
-            this.Context = _context;
+            this.Context = _context1;
         }
 
         public List<Devices> Devices { get; set; }
@@ -18,8 +18,8 @@ namespace Application1.Pages
 
         public void OnGet()
         {
-            this.Devices = (from devices in this.Context.Devices.Take(10)
-                              select devices).ToList();
+            this.Devices = (from device in this.Context.Device.Take(10)
+                            select device).ToList();
         }
 
         public string Message { get; set; } = "Initial Request";
