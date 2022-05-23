@@ -7,7 +7,6 @@ namespace Application1.Pages.Forms
     public class AddAddressModel : PageModel
     {
         [BindProperty]
-
         public AddressModel Address { get; set; }
         public void OnGet()
         {

@@ -11,10 +11,15 @@ namespace Application1
 {
     public class DBCtx : System.Data.Entity.DbContext
     {
-        public DBCtx(DbContextOptions<DBCtx> options) : base(options)
-        {
-        }
+        //public DBCtx(DbContextOptions<DBCtx> options) : base(options)
+        //{
+        //}
 
         public Microsoft.EntityFrameworkCore.DbSet<Devices> Device { get; set; }
+
+        public DBCtx(Microsoft.EntityFrameworkCore.DbSet<Devices> device)
+        {
+            Device = device;
+        }
     }
 }

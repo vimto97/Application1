@@ -13,15 +13,19 @@ namespace Application1.Pages
             _logger = logger;
         }
 
+        
         public string Status { get; private set; }
         [BindProperty(SupportsGet = true)]
         public string Name { get; set; }
         [BindProperty]
         public string City { get; set; }
-        public void OnGet()
+        public object Address { get; private set; }
+
+        public void OnGet(IndexModel AddressModel)
         {
+            City = AddressModel.City;
             Status = "Hello World!";
-            AddressModel.ReferenceEquals(City, Name);
+            Models.AddressModel.ReferenceEquals(City, Name);
             if (string.IsNullOrWhiteSpace(Name))
             {
                 Name = "Random User";
@@ -31,11 +35,6 @@ namespace Application1.Pages
                 City = "in the United Kingdom";
             }
         }
-        //public IActionResult OnPost()
-        //{
-
-        //    return RedirectToPage("/Forms/AddAddress");
-        //}
-        
+          
     }
 }
