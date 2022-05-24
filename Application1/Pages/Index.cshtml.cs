@@ -17,13 +17,12 @@ namespace Application1.Pages
         public string Status { get; private set; }
         [BindProperty(SupportsGet = true)]
         public string Name { get; set; }
-        [BindProperty]
-        public string City { get; set; }
-        public object Address { get; private set; }
+        public string? City { get; private set; }
 
-        public void OnGet(IndexModel AddressModel)
+
+
+        public void OnGet()
         {
-            City = AddressModel.City;
             Status = "Hello World!";
             Models.AddressModel.ReferenceEquals(City, Name);
             if (string.IsNullOrWhiteSpace(Name))
