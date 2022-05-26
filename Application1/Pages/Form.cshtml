@@ -3,3 +3,14 @@
 @{
 }
 
+@{
+    var welcome = "Welcome to this site!";
+    var weekDay = DateTime.Now.DayOfWeek;
+    var greetingMessage = " Here in UK it is: " + weekDay;
+}
+<h1>@welcome</h1>
+<p>@greetingMessage</p>
+<form method="post">
+    <input type="email" name="emailaddress"> 
+    <input type="submit">
+</form>
