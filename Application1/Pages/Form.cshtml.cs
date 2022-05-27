@@ -7,7 +7,7 @@ namespace Application1.Pages
     {
         public void OnGet()
         {
-            var emailAddress = Request.Form["emailaddress"];
+            
         }
     }
 }
